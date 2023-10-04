@@ -43,3 +43,8 @@ RUN apt-get update && \
 
 CMD ["gmx"]
 ```
+
+docker build -t gromacs:latest .
+
+docker run -it --gpus all gromacs:latest
+
