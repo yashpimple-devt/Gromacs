@@ -15,8 +15,8 @@
 8. Start a POC and test the GROMACS installation on GCP.
 
 
-Step 1: Install GROMACS 19.04
--
+## Install GROMACS 19.04
+
  ```
    gcloud compute instances create gromacs-instance \
    --region us-central1-a \
@@ -32,3 +32,14 @@ Step 1: Install GROMACS 19.04
   # Install GROMACS
   sudo apt install gromacs
  ```
+
+## Dockerize GROMACS
+```bash
+FROM ubuntu:20.04
+
+RUN apt-get update && \
+    apt-get install -y gromacs \
+    apt-get install -y nvidia-driver-470
+
+CMD ["gmx"]
+```
