@@ -16,10 +16,19 @@
 
 
 Step 1: Install GROMACS 19.04
-- gcloud compute instances create gromacs-instance \
+-
+ ```
+   gcloud compute instances create gromacs-instance \
    --region us-central1-a \
    --zone us-central1-a \
    --machine-type n1-standard-2 \
    --boot-disk-size 50GB \
    --boot-disk-type standard \
    --boot-disk-image ubuntu-20.04-focal-v20230804
+ ```
+
+ ```
+  sudo apt update
+  # Install GROMACS
+  sudo apt install gromacs
+ ```
