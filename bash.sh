@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 # Install additional dependencies
 sudo apt-get install -y gcc g++ make
@@ -17,6 +17,6 @@ cmake .. -DGMX_BUILD_OWN_FFTW=ON
 make
 sudo make install
 
-echo 'export PATH=/home/yashnileshpimple/gromacs-2019.4/build/bin:$PATH' >> ~/.bashrc
+echo 'export PATH=/home/yashnileshpimple/gromacs-2019.4/build/bin:$PATH'
 
 gmx --version
