@@ -25,7 +25,6 @@ echo 'export PATH=/home/yashnileshpimple/gromacs-2019.4/build/bin:$PATH'
 gmx --version
 
 #GPU setup
-cmake -DCMAKE_BUILD_TYPE=Release -DGMX_GPU=ON ..
 sudo apt-get update
 sudo apt-get install wget gcc
 sudo apt-get -y install cuda
@@ -35,6 +34,7 @@ sudo apt install nvidia-cuda-toolkit
 sudo apt-get install -y nvidia-driver-495 # Install NVIDIA GPU Drivers
 
 sudo reboot # Reboot the System to Apply Changes
+cmake -DCMAKE_BUILD_TYPE=Release -DGMX_GPU=ON ..
 nvidia-smi # Check NVIDIA GPU Status
 
 cmake .. -DGMX_GPU=ON -DGMX_BUILD_OWN_FFTW=ON
