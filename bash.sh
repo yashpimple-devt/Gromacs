@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Installation Guide for Gromacs
 # Install additional dependencies
 sudo apt-get install -y gcc g++ make
 sudo apt install nvidia-cuda-toolkit
@@ -11,22 +12,22 @@ wget ftp://ftp.gromacs.org/pub/gromacs/gromacs-2019.4.tar.gz
 tar xfz gromacs-2019.4.tar.gz
 cd gromacs-2019.4
 
-# Configure and compile GROMACS
+# Configure GROMACS with GPU Support and Build FFTW
+make
 mkdir build
 cd build
-cmake .. -DGMX_GPU=ON -DGMX_BUILD_OWN_FFTW=ON
-make
+cmake .. -DGMX_GPU=ON -DGMX_BUILD_OWN_FFTW=ON 
 sudo make install
 
+# Add GROMACS binary directory to PATH
 echo 'export PATH=/home/yashnileshpimple/gromacs-2019.4/build/bin:$PATH'
 
 gmx --version
 
-
-# for GPU setup
+#GPU setup
 
 sudo apt-get update
-sudo apt-get install -y nvidia-driver-<version>
+sudo apt-get install -y nvidia-driver-495 # Install NVIDIA GPU Drivers
 
-sudo reboot
-nvidia-smi
+sudo reboot # Reboot the System to Apply Changes
+nvidia-smi # Check NVIDIA GPU Status
