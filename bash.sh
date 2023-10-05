@@ -3,7 +3,7 @@
 # Installation Guide for Gromacs
 # Install additional dependencies
 sudo apt-get install -y gcc g++ make
-sudo apt install cmake
+sudo apt-get install cmake
 
 # Download GROMACS 19.04 source code
 wget ftp://ftp.gromacs.org/pub/gromacs/gromacs-2019.4.tar.gz
