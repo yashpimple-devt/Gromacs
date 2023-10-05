@@ -34,15 +34,18 @@ sudo apt install nvidia-cuda-toolkit
 sudo apt-get install -y nvidia-driver-495 # Install NVIDIA GPU Drivers
 
 sudo reboot # Reboot the System to Apply Changes
-cmake -DCMAKE_BUILD_TYPE=Release -DGMX_GPU=ON ..
+# cmake -DCMAKE_BUILD_TYPE=Release -DGMX_GPU=ON ..
 nvidia-smi # Check NVIDIA GPU Status
 
+sudo apt-get update
+sudo apt-get install -y gcc-8 g++-8
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 8
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 8
+sudo update-alternatives --set gcc /usr/bin/gcc-8
+sudo update-alternatives --set g++ /usr/bin/g++-8
+
+
 cmake .. -DGMX_GPU=ON -DGMX_BUILD_OWN_FFTW=ON
-# sudo apt-get install gcc-7 g++-7
-# sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 100
-# sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 100
-# sudo update-alternatives --config gcc
-# sudo update-alternatives --config g++
 make
 sudo make install
 gmx --version
