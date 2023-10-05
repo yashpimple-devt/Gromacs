@@ -46,3 +46,5 @@ cmake .. -DGMX_GPU=ON -DGMX_BUILD_OWN_FFTW=ON
 make
 sudo make install
 gmx --version
+
+
