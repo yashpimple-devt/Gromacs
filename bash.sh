@@ -2,7 +2,7 @@
 
 # Installation Guide for Gromacs
 # Install additional dependencies
-sudo apt-get install -y gcc g++ make cuda
+sudo apt-get install -y gcc g++ make
 sudo apt install nvidia-cuda-toolkit
 
 # Download GROMACS 19.04 source code
