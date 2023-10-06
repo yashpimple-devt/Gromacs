@@ -35,19 +35,12 @@ sudo apt-get install -y nvidia-driver-495 # Install NVIDIA GPU Drivers
 
 sudo reboot # Reboot the System to Apply Changes
 # cmake -DCMAKE_BUILD_TYPE=Release -DGMX_GPU=ON ..
-nvidia-smi # Check NVIDIA GPU Status
-
-sudo apt-get update
-sudo apt-get install -y gcc-8 g++-8
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 8
-sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 8
-sudo update-alternatives --set gcc /usr/bin/gcc-8
-sudo update-alternatives --set g++ /usr/bin/g++-8
 
 
-cmake .. -DGMX_GPU=ON -DGMX_BUILD_OWN_FFTW=ON
-make
-sudo make install
-gmx --version
 
+# screen -S gromacsmake
+# New terminal get open and we can run the cmd in background
+# to deatached we need to press "ctrl + A + D"
+# and to reattached again we need to use 
+# screen -r gromacsmake
 
