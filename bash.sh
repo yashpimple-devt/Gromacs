@@ -20,8 +20,8 @@ make
 sudo make install
 
 # Add GROMACS binary directory to PATH
-echo 'export PATH=$PWD/gromacs-2019.4/build/bin:$PATH'
-export PATH=$PWD/gromacs-2019.4/build/bin:$PATH
+echo 'export PATH=$PWD/bin:$PATH'
+export PATH=$PWD/bin:$PATH
 
 gmx --version
 
