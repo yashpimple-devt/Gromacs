@@ -14,3 +14,9 @@ cmake .. -DGMX_GPU=ON -DGMX_BUILD_OWN_FFTW=ON
 make
 sudo make install
 gmx --version
+
+#Manage Terminal Sessions Effectively with tmux
+# cmd: tmux
+# tmux list-sessions : list sessions
+# ctrl + b d : detach current sessions
+# tmux attach-session -t 1
