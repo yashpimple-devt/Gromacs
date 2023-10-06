@@ -43,4 +43,5 @@ sudo reboot # Reboot the System to Apply Changes
 # to deatached we need to press "ctrl + A + D"
 # and to reattached again we need to use 
 # screen -r gromacsmake
-
+# to view list of screen 
+# screen -ls
